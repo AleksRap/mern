@@ -2,3 +2,16 @@
 @import '~materialize-css';
 @import 'styles/variables';
 @import 'styles/mixins';
+@import 'styles/scroll';
+@import 'fonts/fontello/css/fontello.css';
+@import 'fonts/fontello/css/fontello-codes.css';
+
+:root {
+  --color-green: #3dd598;
+  --color-purple: #755fe2;
+  --color-red: #ff464f;
+
+  --color-primary: var(--color-green);
+  --color-secondary: var(--color-purple);
+  --color-error: var(--color-red);
+}

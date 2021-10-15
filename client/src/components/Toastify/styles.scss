@@ -1,0 +1,12 @@
+@import '~react-toastify/dist/ReactToastify.css';
+
+.Toastify {
+  &__toast-container {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  &__toast-icon {
+    display: none;
+  }
+}

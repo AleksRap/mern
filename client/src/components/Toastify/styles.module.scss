@@ -1,0 +1,42 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.icon {
+  margin-right: 25px;
+  font-size: 12px;
+}
+
+.title {
+  margin-bottom: 5px;
+  font-size: 22px;
+}
+
+.toastify {
+  @include flexbox;
+
+  &.success {
+    .icon,
+    .title {
+      color: $color-primary;
+    }
+  }
+
+  &.error {
+    .icon,
+    .title {
+      color: $color-error;
+    }
+  }
+
+  &.info {
+    .icon,
+    .title {
+      color: $color-secondary;
+    }
+  }
+}
+
+.message {
+  font-weight: 400;
+  word-break: break-all;
+}

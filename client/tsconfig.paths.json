@@ -18,6 +18,9 @@
       "@hooks": ["hooks"],
       "@hooks/*": ["hooks/*"],
 
+      "@pages": ["pages"],
+      "@pages/*": ["pages/*"],
+
       "@store": ["store"],
       "@store/*": ["store/*"],
 

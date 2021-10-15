@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
+import { ToastContainer } from 'react-toastify';
+import { Routes } from '@containers';
 
-export const App: FC = () => {
-  return (
-    <div className="container">
-      <h1>Hello</h1>
-    </div>
-  );
-};
+export const App: FC = () => (
+  <>
+    <Routes />
+    <ToastContainer hideProgressBar position="top-center" />
+  </>
+);

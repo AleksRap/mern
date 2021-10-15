@@ -1,0 +1,136 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.type {
+  &_h1 {
+    font-size: 54px;
+
+    @include forDesktopMiddle {
+      font-size: 72px;
+    }
+  }
+
+  &_h2 {
+    font-size: 36px;
+  }
+
+  &_h3 {
+    font-size: 30px;
+  }
+
+  &_h4 {
+    font-size: 26px;
+  }
+
+  &_h5 {
+    font-size: 20px;
+  }
+}
+
+.align {
+  &_center {
+    text-align: center;
+  }
+
+  &_left {
+    text-align: left;
+  }
+
+  &_right {
+    text-align: right;
+  }
+}
+
+.decoration {
+  &_underline {
+    text-decoration: underline;
+  }
+
+  &_overline {
+    text-decoration: overline;
+  }
+}
+
+.transform {
+  &_capitalize {
+    text-transform: capitalize;
+  }
+
+  &_uppercase {
+    text-transform: uppercase;
+  }
+
+  &_lowercase {
+    text-transform: lowercase;
+  }
+}
+
+.size {
+  &_xxxs {
+    font-size: 10px;
+  }
+
+  &_xxs {
+    font-size: 12px;
+  }
+
+  &_xs {
+    font-size: 14px;
+  }
+
+  &_s {
+    font-size: 16px;
+  }
+
+  &_m {
+    font-size: 18px;
+  }
+
+  &_l {
+    font-size: 20px;
+  }
+
+  &_xl {
+    font-size: 24px;
+  }
+
+  &_xxl {
+    font-size: 36px;
+  }
+
+  &_xxxl {
+    font-size: 48px;
+  }
+
+  &_xxxxl {
+    font-size: 72px;
+  }
+}
+
+.color {
+  &_primary {
+    color: $color-primary
+  }
+
+  &_secondary {
+    color: $color-secondary;
+  }
+
+  &_error {
+    color: $color-error;
+  }
+}
+
+.weight {
+  &_normal {
+    font-weight: 400;
+  }
+
+  &_medium {
+    font-weight: 600;
+  }
+
+  &_bold {
+    font-weight: 700;
+  }
+}

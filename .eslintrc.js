@@ -14,6 +14,8 @@ const rulesCommon = {
   'operator-linebreak': 0,
   'implicit-arrow-linebreak': 0,
   'no-confusing-arrow': 0,
+  'quotes': [2, 'single', 'avoid-escape'],
+  'object-curly-spacing': [2, 'always']
 }
 
 module.exports = {
