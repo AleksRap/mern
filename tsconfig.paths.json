@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./server/",
+    "paths": {
+      "@config": ["config"],
+      "@config/*": ["config/*"],
+
+      "@constants": ["constants"],
+      "@constants/*": ["constants/*"],
+
+      "@models": ["models"],
+      "@models/*": ["models/*"],
+
+      "@routes": ["routes"],
+      "@routes/*": ["routes/*"],
+
+      "@types": ["types"],
+      "@types/*": ["types/*"]
+    }
+  },
+}
