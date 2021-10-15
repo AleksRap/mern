@@ -4,10 +4,10 @@ import { check, validationResult } from 'express-validator';
 import { User } from '@models';
 import { Validations } from '@constants';
 
-export const router = Router();
+export const authRouter = Router();
 
 // /api/auth/register
-router.post(
+authRouter.post(
   '/register',
   [
     check('email', 'Некорректный email').isEmail(),
@@ -46,7 +46,7 @@ router.post(
   });
 
 // /api/auth/login
-router.post(
+authRouter.post(
   '/login',
   [
     check(),
