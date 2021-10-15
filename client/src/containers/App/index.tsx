@@ -1,9 +1,8 @@
 import React, { FC } from 'react';
-import './styles.module.scss';
 
 export const App: FC = () => {
   return (
-    <div>
+    <div className="container">
       <h1>Hello</h1>
     </div>
   );
