@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.paths.json",
   "include": [
-    "src/*"
+    "src/**/*"
   ],
   "compilerOptions": {
     "lib": [
@@ -9,6 +9,10 @@
       "dom.iterable",
       "esnext"
     ],
-    "jsx": "react-jsx"
-  },
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext"
+  }
 }

@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node server/app.ts",
     "server": "nodemon",
+    "client": "cd client && npx react-app-rewired start",
+    "dev": "npm-run-all --parallel --continue-on-error server client",
     "tsc:server": "tsc",
     "tsc:client": "cd client && tsc",
     "lint": "npx eslint . --cache --ext js,jsx,ts,tsx --fix",
