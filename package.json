@@ -1,9 +1,9 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "main": "server/app.js",
   "scripts": {
-    "start": "node src/app.ts",
+    "start": "node server/app.ts",
     "server": "nodemon",
     "tsc": "tsc --noEmit",
     "lint": "npx eslint . --cache --ext js,jsx,ts,tsx --fix",
@@ -45,12 +45,13 @@
       "**/*.test.ts",
       ".git",
       ".idea",
-      "node_modules"
+      "node_modules",
+      ".husky"
     ],
     "watch": [
-      "src"
+      "server"
     ],
-    "exec": "node -r tsconfig-paths/register -r ts-node/register ./src/app.ts",
+    "exec": "node -r tsconfig-paths/register -r ts-node/register ./server/app.ts",
     "ext": "ts, js"
   }
 }

@@ -10,7 +10,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "baseUrl": "./src/",
+    "baseUrl": "./server/",
     "paths": {
       "@config": ["config"],
       "@config/*": ["config/*"],
