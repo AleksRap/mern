@@ -31,10 +31,7 @@ const validationSchema = object().shape({
     ),
   email: string()
     .required(ERRORS.required)
-    .min(
-      Validations.loginOrEmailMinLength,
-      ERRORS.minLength(Validations.loginOrEmailMinLength)
-    ),
+    .email(ERRORS.email),
   loginOrEmail: string()
     .required(ERRORS.required)
     .min(
