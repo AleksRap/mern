@@ -10,8 +10,8 @@ export type AuthState = {
 };
 
 export type AuthSignUp = {
-  email: string,
   login: string,
+  email: string,
   password: string,
 };
 

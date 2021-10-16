@@ -1,12 +1,15 @@
 import React, { FC } from 'react';
-import { H1 } from '@components';
+import { H3 } from '@components';
+import { AuthForm } from '@containers';
 
 export const Registration: FC = () => {
   return (
     <div>
-      <H1 align="center">
-        Registration
-      </H1>
+      <H3 align="center">
+        Регистрация
+      </H3>
+
+      <AuthForm type="register" />
     </div>
   );
 };
