@@ -5,6 +5,10 @@ export const routes: Routes = {
     root: '/auth',
     title: 'Auth',
   },
+  registration: {
+    root: '/registration',
+    title: 'Registration',
+  },
   create: {
     root: '/create',
     title: 'Create',
@@ -14,7 +18,8 @@ export const routes: Routes = {
     title: 'Links',
   },
   details: {
-    root: '/details',
+    root: '/details/:id',
+    link: '/details',
     title: 'Details',
   },
 };

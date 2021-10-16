@@ -1,17 +1,29 @@
 @import '~normalize.css';
-@import '~materialize-css';
 @import 'styles/variables';
 @import 'styles/mixins';
+@import 'styles/fonts';
 @import 'styles/scroll';
 @import 'fonts/fontello/css/fontello.css';
 @import 'fonts/fontello/css/fontello-codes.css';
 
 :root {
-  --color-green: #3dd598;
+  --color-black: #2a2a2a;
+  --color-black-light: #949494;
   --color-purple: #755fe2;
+  --color-purple-light: #b1a4f1;
   --color-red: #ff464f;
+  --color-red-light: #ff999e;
 
-  --color-primary: var(--color-green);
+  --color-primary: var(--color-black);
+  --color-primary-100: var(--color-black-light);
   --color-secondary: var(--color-purple);
+  --color-secondary-100: var(--color-purple-light);
   --color-error: var(--color-red);
+  --color-error-100: var(--color-red-light);
+}
+
+html,
+body,
+div[id="root"] {
+  font-family: $default-font, Arial, Helvetica, sans-serif;
 }

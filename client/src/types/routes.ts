@@ -3,6 +3,10 @@ export type Routes = {
     root: string,
     title: string,
   },
+  registration: {
+    root: string,
+    title: string,
+  },
   create: {
     root: string,
     title: string,
@@ -13,6 +17,7 @@ export type Routes = {
   },
   details: {
     root: string,
+    link: string,
     title: string,
   },
 };

@@ -1,0 +1,68 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.button {
+  @include flexbox(center, center);
+  cursor: pointer;
+
+  font-weight: 400;
+  color: white;
+
+  border: 1px solid transparent;
+
+  transition: all $transition-time ease-in;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.isFullWidth {
+    width: 100%;
+  }
+}
+
+.size {
+
+  &_small {
+    padding: 6px 16px;
+  }
+
+  &_normal {
+    padding: 12px 26px;
+  }
+
+  &_big {
+    padding: 16px 36px;
+  }
+}
+
+.color {
+
+  &_primary {
+    background-color: $color-primary;
+
+    @include hoverBtn($color-primary, $color-primary-100);
+    @include disableBtn;
+  }
+
+  &_secondary {
+    background-color: $color-secondary;
+
+    @include hoverBtn($color-secondary, $color-secondary-100);
+    @include disableBtn;
+  }
+
+  &_error {
+    background-color: $color-error;
+
+    @include hoverBtn($color-error, $color-error-100);
+    @include disableBtn;
+  }
+
+  &_transparent {
+    padding: 0;
+    background-color: transparent;
+
+    @include disableBtn;
+  }
+}

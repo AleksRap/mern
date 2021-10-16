@@ -34,6 +34,23 @@ $defaultFlexBoxAlign: center;
   text-overflow: ellipsis;
 }
 
+@mixin disableBtn {
+  &:disabled {
+    background-color: gray;
+    opacity: .2;
+    transition: all $transition-time ease-in;
+    pointer-events: none;
+  }
+}
+
+@mixin hoverBtn($color, $bgColor) {
+  &:hover {
+    color: $color;
+    background-color: $bgColor;
+    transition: all $transition-time ease-in;
+  }
+}
+
 // Media request mixins MobileFirst
 @mixin forTablet {
   @media screen and (min-width: 481px) {

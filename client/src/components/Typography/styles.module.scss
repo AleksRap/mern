@@ -3,10 +3,10 @@
 
 .type {
   &_h1 {
-    font-size: 54px;
+    font-size: 48px;
 
     @include forDesktopMiddle {
-      font-size: 72px;
+      font-size: 60px;
     }
   }
 
