@@ -8,9 +8,6 @@ import { Validations, ERRORS, SUCCESS } from '@constants';
 
 export const authRouter = Router();
 
-/**
- * /api/auth/register
- */
 authRouter.post(
   '/register',
   [
@@ -52,9 +49,6 @@ authRouter.post(
     }
   });
 
-/**
- * /api/auth/login
- */
 authRouter.post(
   '/login',
   [

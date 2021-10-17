@@ -1,5 +1,5 @@
 import { NavbarLink } from '@types';
-import { routes } from '@constants';
+import { routes } from './routes';
 
 export const NAVBAR_LINKS: NavbarLink[] = [
   {

@@ -3,3 +3,9 @@ declare module '*.json' {
   const content: any;
   export default content;
 }
+
+declare module 'http' {
+  interface IncomingHttpHeaders {
+    Authorization?: string,
+  }
+}

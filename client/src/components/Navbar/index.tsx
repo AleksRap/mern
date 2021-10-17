@@ -20,6 +20,7 @@ export const Navbar: FC<Props> = ({
             <NavLink
               to={link}
               activeClassName={styles.activeLink}
+              className={styles.link}
             >
               <Text
                 tag="span"

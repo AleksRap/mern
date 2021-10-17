@@ -1,13 +1,14 @@
 import express from 'express';
 import config from 'config';
 import mongoose from 'mongoose';
-import { authRouter } from '@routes';
+import { authRouter, linkRouter } from '@routes';
 
 const app = express();
 
 app.use(express.json());
 
 app.use('/api/auth', authRouter);
+app.use('/api/links', linkRouter);
 
 const PORT = config.get('port') || 5000;
 

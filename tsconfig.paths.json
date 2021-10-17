@@ -11,6 +11,9 @@
       "@models": ["models"],
       "@models/*": ["models/*"],
 
+      "@middlewares": ["middlewares"],
+      "@middlewares/*": ["middlewares/*"],
+
       "@routes": ["routes"],
       "@routes/*": ["routes/*"],
 

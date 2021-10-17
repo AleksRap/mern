@@ -4,12 +4,29 @@
 .list {
   @include clearList();
   @include flexbox(flex-start, center);
-  gap: 25px;
 }
 
-.activeLink {
-  text-decoration: underline;
-  color: $color-secondary;
+.link {
+  position: relative;
+  display: inline-block;
+
+  padding: 20px;
+
+  text-decoration: none;
+  color: $color-primary;
+
+  transition: all $transition-time ease-in;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  &.activeLink {
+    color: white;
+    transition: all $transition-time ease-in;
+  }
 }
+
+
 
 

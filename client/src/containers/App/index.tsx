@@ -1,9 +1,11 @@
 import React, { FC, useCallback } from 'react';
+import { NavLink } from 'react-router-dom';
+import { routes } from '@constants';
 import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import { Routes } from '@containers';
 import { authSignOut } from '@store/auth/actionCreators';
-import { Button, H1, Navbar } from '@components';
+import { Button, Navbar, Text } from '@components';
 import { useShallowSelector } from '@hooks';
 import { authSelectors } from '@store/auth/selectors';
 import styles from './styles.module.scss';
@@ -19,9 +21,18 @@ export const App: FC = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <H1 align="center">
-          Сократи ссылку
-        </H1>
+        <NavLink
+          to={routes.create.root}
+          className={styles.logo}
+        >
+          <Text
+            tag="span"
+            size="xl"
+            className={styles.logoText}
+          >
+            Сокращение ссылок
+          </Text>
+        </NavLink>
 
         {isAuth && (
           <>
@@ -30,7 +41,6 @@ export const App: FC = () => {
             <Button
               onClick={handleLogout}
               size="small"
-              className={styles.btn}
             >
               Logout
             </Button>
@@ -39,7 +49,9 @@ export const App: FC = () => {
         )}
       </header>
 
-      <Routes />
+      <main className={styles.main}>
+        <Routes />
+      </main>
       <ToastContainer hideProgressBar position="top-center" />
     </div>
   );
