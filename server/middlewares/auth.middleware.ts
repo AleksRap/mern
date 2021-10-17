@@ -9,12 +9,14 @@ export const authMiddleware = (req: Request, res: Response, next: NextFunction) 
   }
 
   try {
-    if (req.headers.Authorization) {
-      const authHeader = req.headers.Authorization as string;
+    if (req.headers.authorization) {
+      const authHeader = req.headers.authorization;
       const token = authHeader.split(' ')[1];
       if (!token) throw Error();
 
       res.locals.user = jwt.verify(token, config.get('jwtSecret'));
+    } else {
+      throw Error();
     }
 
     next();

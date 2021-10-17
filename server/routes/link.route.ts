@@ -10,17 +10,14 @@ export const linkRouter = Router();
 linkRouter.post('/generate', authMiddleware, async (req: Request, res: Response) => {
   try {
     const baseUrl = config.get('baseUrl');
-    const { from } = req.body;
+    const { to } = req.body;
 
     const code = shortid.generate();
 
-    const existing = await Link.findOne({ from });
+    const existing = await Link.findOne({ to });
+    if (existing) return res.json({ link: existing });
 
-    if (existing) {
-      return res.json({ link: existing });
-    }
-
-    const to = baseUrl + '/t/' + code;
+    const from = baseUrl + '/t/' + code;
 
     const link = new Link({
       code,
@@ -40,17 +37,15 @@ linkRouter.post('/generate', authMiddleware, async (req: Request, res: Response)
 
 linkRouter.get('/', authMiddleware, async (req: Request, res: Response) => {
   try {
-    const links = await Link.find({ owner: res.locals.user.userId });
-    res.json(links);
-  } catch (e) {
-    res.status(500).json({ message: ERRORS.common });
-  }
-});
+    const { id } = req.query;
 
-linkRouter.post('/:id', authMiddleware, async (req: Request, res: Response) => {
-  try {
-    const link = await Link.findById(req.params.id);
-    res.json(link);
+    if (id) {
+      const link = await Link.findById(id);
+      res.json({ link });
+    } else {
+      const links = await Link.find({ owner: res.locals.user.userId });
+      res.json(links);
+    }
   } catch (e) {
     res.status(500).json({ message: ERRORS.common });
   }

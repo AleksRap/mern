@@ -21,3 +21,7 @@ export type Routes = {
     title: string,
   },
 };
+
+export type DetailsLink = {
+  id: string,
+}

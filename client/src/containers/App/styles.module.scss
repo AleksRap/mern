@@ -1,19 +1,29 @@
 @import '../../assets/styles/mixins';
 
+$header-height: 70px;
+
 .container {
   width: 100%;
   max-width: 1200px;
+  height: 100vh;
 
   margin-left: auto;
   margin-right: auto;
+
+  @include flexbox(flex-start, center);
+  flex-direction: column;
 }
 
 .header {
-  @include flexbox(center, center);
+  width: 100%;
+  height: $header-height;
+
+  @include flexbox();
   gap: 25px;
 
   padding-left: 20px;
   padding-right: 20px;
+
   background-color: lightcoral;
 }
 
@@ -24,7 +34,7 @@
 
 .logoText {
   display: inline-block;
-  
+
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -34,6 +44,8 @@
 }
 
 .main {
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 100%;
+  min-height: calc(100vh - #{$header-height});
+
+  padding: 20px;
 }

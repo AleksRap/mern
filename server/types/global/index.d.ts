@@ -6,6 +6,6 @@ declare module '*.json' {
 
 declare module 'http' {
   interface IncomingHttpHeaders {
-    Authorization?: string,
+    authorization: string,
   }
 }

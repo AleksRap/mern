@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { NAVBAR_LINKS } from '@constants';
 import { Text } from '@components/Typography';
@@ -13,10 +14,10 @@ export const Navbar: FC<Props> = ({
 }) => {
 
   return (
-    <nav className={className}>
+    <nav className={cx(styles.nav, className)}>
       <ul className={styles.list}>
         {NAVBAR_LINKS.map(({ name, link }) => (
-          <li>
+          <li className={styles.item}>
             <NavLink
               to={link}
               activeClassName={styles.activeLink}

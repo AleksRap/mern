@@ -1,0 +1,16 @@
+@import '../../assets/styles/mixins';
+
+.container {
+  width: 60%;
+  height: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @include flexbox();
+  gap: 25px;
+}
+
+.btn {
+  flex: 0 0 auto;
+}

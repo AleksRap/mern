@@ -1,7 +1,7 @@
 import { HeadersDefaults } from 'axios';
 
 export type ExtendHeaders = {
-  Authorization?: string,
+  authorization?: string,
 } & HeadersDefaults;
 
 export type ResponseData = {

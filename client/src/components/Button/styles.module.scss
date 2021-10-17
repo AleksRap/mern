@@ -2,7 +2,7 @@
 @import '../../assets/styles/variables';
 
 .button {
-  @include flexbox(center, center);
+  @include flexbox();
   cursor: pointer;
 
   font-weight: 400;

@@ -22,7 +22,7 @@ export default function* ajax(
 
   if (accessToken) {
     const headers: ExtendHeaders = client.defaults.headers;
-    headers.Authorization = `Bearer ${accessToken}`;
+    headers.authorization = `Bearer ${accessToken}`;
   }
 
   // @ts-ignore
