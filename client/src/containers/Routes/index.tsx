@@ -12,7 +12,7 @@ export const Routes: FC = () => {
       <PrivateRoute path={routes.create.root} component={Create} />
       <PrivateRoute path={routes.links.root} component={Links} />
       <PrivateRoute path={routes.details.root} component={Details} />
-      <Redirect to={{ pathname: routes.auth.root }} />
+      <Redirect to={{ pathname: routes.create.root }} />
     </Switch>
   );
 };

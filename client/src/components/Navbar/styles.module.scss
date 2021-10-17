@@ -1,0 +1,15 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.list {
+  @include clearList();
+  @include flexbox(flex-start, center);
+  gap: 25px;
+}
+
+.activeLink {
+  text-decoration: underline;
+  color: $color-secondary;
+}
+
+

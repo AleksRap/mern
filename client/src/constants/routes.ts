@@ -3,23 +3,23 @@ import { Routes } from '@types';
 export const routes: Routes = {
   auth: {
     root: '/auth',
-    title: 'Auth',
+    title: 'Авторизация',
   },
   registration: {
     root: '/registration',
-    title: 'Registration',
+    title: 'Регистрация',
   },
   create: {
     root: '/create',
-    title: 'Create',
+    title: 'Создать',
   },
   links: {
     root: '/links',
-    title: 'Links',
+    title: 'Ссылки',
   },
   details: {
     root: '/details/:id',
     link: '/details',
-    title: 'Details',
+    title: 'Детали',
   },
 };

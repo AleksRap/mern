@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import { Routes } from '@containers';
 import { authSignOut } from '@store/auth/actionCreators';
-import { Button, H1 } from '@components';
-import styles from './styles.module.scss';
+import { Button, H1, Navbar } from '@components';
 import { useShallowSelector } from '@hooks';
 import { authSelectors } from '@store/auth/selectors';
+import styles from './styles.module.scss';
 
 export const App: FC = () => {
   const dispatch = useDispatch();
@@ -24,13 +24,18 @@ export const App: FC = () => {
         </H1>
 
         {isAuth && (
-          <Button
-            onClick={handleLogout}
-            size="small"
-            className={styles.btn}
-          >
-            Logout
-          </Button>
+          <>
+            <Navbar className={styles.navbar} />
+
+            <Button
+              onClick={handleLogout}
+              size="small"
+              className={styles.btn}
+            >
+              Logout
+            </Button>
+          </>
+
         )}
       </header>
 
