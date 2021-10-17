@@ -1,10 +1,10 @@
 import React, { FC, useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import { Button, Input } from '@components';
 import { routes, ERRORS, Validations } from '@constants';
+import { history } from '@utils';
 import { authSignIn, authSignUp } from '@store/auth/actionCreators';
 import styles from './styles.module.scss';
 
@@ -22,7 +22,27 @@ const initialValues: InitialValues = {
   password: '',
 };
 
-const validationSchema = object().shape({
+const validationObjCommon = {
+  password: string()
+    .required(ERRORS.required)
+    .min(
+      Validations.passMinLength,
+      ERRORS.minLength(Validations.passMinLength)
+    ),
+};
+
+const validationSchemaLogin = object().shape({
+  ...validationObjCommon,
+  loginOrEmail: string()
+    .required(ERRORS.required)
+    .min(
+      Validations.loginOrEmailMinLength,
+      ERRORS.minLength(Validations.loginOrEmailMinLength)
+    ),
+});
+
+const validationSchemaRegister = object().shape({
+  ...validationObjCommon,
   login: string()
     .required(ERRORS.required)
     .min(
@@ -32,18 +52,6 @@ const validationSchema = object().shape({
   email: string()
     .required(ERRORS.required)
     .email(ERRORS.email),
-  loginOrEmail: string()
-    .required(ERRORS.required)
-    .min(
-      Validations.loginOrEmailMinLength,
-      ERRORS.minLength(Validations.loginOrEmailMinLength)
-    ),
-  password: string()
-    .required(ERRORS.required)
-    .min(
-      Validations.passMinLength,
-      ERRORS.minLength(Validations.passMinLength)
-    ),
 });
 
 type Props = {
@@ -53,7 +61,6 @@ type Props = {
 export const AuthForm: FC<Props> = ({
  type,
 }) => {
-  const history = useHistory();
   const dispatch = useDispatch();
 
   const {
@@ -64,7 +71,7 @@ export const AuthForm: FC<Props> = ({
     errors,
   } = useFormik<InitialValues>({
     initialValues,
-    validationSchema,
+    validationSchema: type === 'register' ? validationSchemaRegister : validationSchemaLogin,
     onSubmit: (obj) => {
       const { login, email, loginOrEmail, password } = obj
 

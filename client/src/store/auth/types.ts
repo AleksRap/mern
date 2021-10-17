@@ -20,6 +20,10 @@ export type AuthSignIn = {
   password: string;
 };
 
-export type AuthTokenRes = {
+export type AuthSignUpRes = {
+  message: string
+};
+
+export type AuthSignInRes = {
   token: string
 };

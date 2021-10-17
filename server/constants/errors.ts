@@ -1,10 +1,9 @@
-import { Validations } from '@constants/validation';
-
 export const ERRORS = {
   auth: {
     incorrectEmail: 'Некорректный email',
-    minLengthPass: (minLength: number = Validations.passMinLength) =>
-      `Минимальная длина пароля ${minLength} символов`,
+    incorrectLogin: 'Некорректный дщпшт',
+    minLength: (minLength: number) =>
+      `Минимальная длина ${minLength} символов`,
     incorrectRegistration: 'Некорректные данные при регистрации',
     userExists: 'Такой пользователь уже существует',
     incorrectData: 'Некорректные данные при входе в систему',

@@ -8,12 +8,14 @@ import { Validations, ERRORS, SUCCESS } from '@constants';
 
 export const authRouter = Router();
 
-// /api/auth/register
+/** /api/auth/register */
 authRouter.post(
   '/register',
   [
+    check('login', ERRORS.auth.minLength(Validations.loginOrEmailMinLength))
+      .isLength({ min: Validations.loginOrEmailMinLength }),
     check('email', ERRORS.auth.incorrectEmail).isEmail(),
-    check('password', ERRORS.auth.minLengthPass(Validations.passMinLength))
+    check('password', ERRORS.auth.minLength(Validations.passMinLength))
       .isLength({ min: Validations.passMinLength }),
   ],
   async (req: Request, res: Response) => {
@@ -27,16 +29,17 @@ authRouter.post(
         });
       }
 
-      const { email, password } = req.body;
+      const { login, email, password } = req.body;
 
-      const candidate = await User.findOne({ email });
+      const candidateEmail = await User.findOne({ email });
+      const candidateLogin = await User.findOne({ login });
 
-      if (candidate) {
+      if (candidateEmail || candidateLogin) {
         return res.status(400).json({ message: ERRORS.auth.userExists });
       }
 
       const hashedPassword = await bcrypt.hash(password, 12);
-      const user = new User({ email, password: hashedPassword });
+      const user = new User({ login, email, password: hashedPassword });
 
       await user.save();
 
@@ -47,7 +50,7 @@ authRouter.post(
     }
   });
 
-// /api/auth/login
+/** /api/auth/login */
 authRouter.post(
   '/login',
   [
