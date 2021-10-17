@@ -8,7 +8,9 @@ import { Validations, ERRORS, SUCCESS } from '@constants';
 
 export const authRouter = Router();
 
-/** /api/auth/register */
+/**
+ * /api/auth/register
+ */
 authRouter.post(
   '/register',
   [
@@ -50,7 +52,9 @@ authRouter.post(
     }
   });
 
-/** /api/auth/login */
+/**
+ * /api/auth/login
+ */
 authRouter.post(
   '/login',
   [
@@ -67,9 +71,11 @@ authRouter.post(
         });
       }
 
-      const { email, password } = req.body;
+      const { loginOrEmail, password } = req.body;
 
-      const user = await User.findOne({ email });
+      const user = loginOrEmail.includes('@')
+        ? await User.findOne({ email: loginOrEmail })
+        : await User.findOne({ login: loginOrEmail });
 
       if (!user) {
         return res.status(400).json({ message: ERRORS.auth.userNotFound });
@@ -77,7 +83,7 @@ authRouter.post(
 
       const isMatch = await bcrypt.compare(password, user.password);
 
-      if (isMatch) {
+      if (!isMatch) {
         return res.status(400).json({ message: ERRORS.auth.incorrectPassword });
       }
 

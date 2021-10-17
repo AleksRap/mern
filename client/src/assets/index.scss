@@ -27,3 +27,7 @@ body,
 div[id="root"] {
   font-family: $default-font, Arial, Helvetica, sans-serif;
 }
+
+* {
+  box-sizing: border-box;
+}

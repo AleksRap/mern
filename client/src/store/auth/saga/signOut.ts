@@ -8,6 +8,7 @@ import { ErrorWithCodeType } from '@types';
 function* signOut() {
   try {
     yield put(authSetState({
+      id: null,
       token: null,
       isAuth: false,
     }));

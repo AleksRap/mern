@@ -4,6 +4,7 @@ import { RequestStatus } from '@types';
 export type AuthState = {
   isAuth: boolean,
   token: string | null,
+  id: string | null,
 
   [AuthActionTypes.SIGN_UP]: RequestStatus,
   [AuthActionTypes.SIGN_IN]: RequestStatus,
@@ -26,4 +27,5 @@ export type AuthSignUpRes = {
 
 export type AuthSignInRes = {
   token: string
+  userId: string
 };

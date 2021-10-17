@@ -2,17 +2,14 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import { AxiosResponse } from 'axios';
 import { URL, routes } from '@constants';
 import { history, simpleSagaErrorHandler } from '@utils';
-import { RequestStatus, AuthSignInRes, ErrorWithCodeType } from '@types';
+import { AuthSignInRes, ErrorWithCodeType } from '@types';
 import ajax from '@store/api/ajax';
 import { authSignIn, authSetState } from '@store/auth/actionCreators';
 import { AuthActionTypes } from '@store/auth/actionTypes';
 
 export function* signInSaga({ payload }: ReturnType<typeof authSignIn>) {
-  const { loginOrEmail, password } = payload;
   try {
-    yield put(authSetState({
-      [AuthActionTypes.SIGN_IN]: RequestStatus.INIT,
-    }));
+    const { loginOrEmail, password } = payload;
 
     const response: AxiosResponse<AuthSignInRes> = yield call(ajax, {
       method: 'POST',
@@ -22,20 +19,18 @@ export function* signInSaga({ payload }: ReturnType<typeof authSignIn>) {
         password,
       },
     });
-    const { token } = response.data;
+    const { token, userId } = response.data;
 
     if (token) {
       yield put(authSetState({
         token,
+        id: userId,
         isAuth: true,
       }));
 
       history.push(routes.create.root);
     }
   } catch (err) {
-    yield put(authSetState({
-      [AuthActionTypes.SIGN_IN]: RequestStatus.ERROR,
-    }));
     simpleSagaErrorHandler(err as ErrorWithCodeType);
   }
 }

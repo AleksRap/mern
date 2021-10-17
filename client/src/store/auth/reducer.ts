@@ -6,6 +6,7 @@ import { AUTH_ACTIONS } from '@store/auth/handlers';
 const initialState: AuthState = {
   isAuth: false,
   token: null,
+  id: null,
 
   [AuthActionTypes.SIGN_IN]: RequestStatus.INIT,
   [AuthActionTypes.SIGN_UP]: RequestStatus.INIT,

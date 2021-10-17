@@ -94,7 +94,7 @@ export const AuthForm: FC<Props> = ({
 
   const handleRedirect = useCallback(() => {
     history.push(type === 'register' ? routes.auth.root : routes.registration.root);
-  }, [history, type]);
+  }, [type]);
 
   return (
     <form
@@ -110,6 +110,7 @@ export const AuthForm: FC<Props> = ({
             placeholder="Введите логин"
             positionLabel="top"
             name="login"
+            autoComplete="off"
             error={'login' in errors && 'login' in touched && errors.login}
           />
 
@@ -120,6 +121,7 @@ export const AuthForm: FC<Props> = ({
             placeholder="Введите email"
             positionLabel="top"
             name="email"
+            autoComplete="off"
             error={'email' in errors && 'email' in touched && errors.email}
           />
         </>
@@ -133,6 +135,7 @@ export const AuthForm: FC<Props> = ({
           placeholder="Введите логин или email"
           positionLabel="top"
           name="loginOrEmail"
+          autoComplete="off"
           error={'loginOrEmail' in errors && 'loginOrEmail' in touched && errors.loginOrEmail}
         />
       )}
@@ -140,10 +143,12 @@ export const AuthForm: FC<Props> = ({
       <Input
         value={values.password}
         onChange={handleChange}
+        type="password"
         label="Пароль"
         placeholder="Введите пароль"
         positionLabel="top"
         name="password"
+        autoComplete="off"
         error={'password' in errors && 'password' in touched && errors.password}
       />
 
