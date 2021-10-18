@@ -1,7 +1,7 @@
 export const ERRORS = {
   auth: {
     incorrectEmail: 'Некорректный email',
-    incorrectLogin: 'Некорректный дщпшт',
+    incorrectLogin: 'Некорректный логин',
     minLength: (minLength: number) =>
       `Минимальная длина ${minLength} символов`,
     incorrectRegistration: 'Некорректные данные при регистрации',
@@ -10,6 +10,9 @@ export const ERRORS = {
     userNotFound: 'Пользователь не найден',
     incorrectPassword: 'Неверный пароль, попробуйте снова',
     notAuth: 'Нет авторизации',
+  },
+  links: {
+    linkNotFound: 'Ссылка не найдена',
   },
   common: 'Что-то пошло не так, попробуйте снова',
 };
