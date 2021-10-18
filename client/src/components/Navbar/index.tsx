@@ -17,7 +17,7 @@ export const Navbar: FC<Props> = ({
     <nav className={cx(styles.nav, className)}>
       <ul className={styles.list}>
         {NAVBAR_LINKS.map(({ name, link }) => (
-          <li className={styles.item}>
+          <li key={link} className={styles.item}>
             <NavLink
               to={link}
               activeClassName={styles.activeLink}

@@ -26,7 +26,7 @@ export const LinkList: FC<Props> = ({
       </thead>
       <tbody>
         {links.map(({ from, to, _id }, index) => (
-          <tr>
+          <tr key={_id}>
             <td>{index + 1}</td>
             <td>
               <a
