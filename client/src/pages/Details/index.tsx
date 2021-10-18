@@ -2,8 +2,8 @@ import React, { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { DetailsLink } from '@types';
-import { linksGetLinkInfo } from '@store/links/actionCreators';
-import { LinkCard } from '@components';
+import { linksGetLinkInfo, linksSetState } from '@store/links/actionCreators';
+import { LinkCard, Spinner } from '@components';
 import { useShallowSelector } from '@hooks';
 import { linksSelectors } from '@store/links/selectors';
 
@@ -15,8 +15,14 @@ export const Details: FC = () => {
 
   useEffect(() => {
     if (id) dispatch(linksGetLinkInfo({ id }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
 
-  return link && <LinkCard link={link} />;
+    return () => { dispatch(linksSetState({ link: null })) };
+  }, [id, dispatch]);
+
+  return (
+    <>
+      {link && <LinkCard link={link} />}
+      <Spinner isShow={!link} />
+    </>
+  );
 };
