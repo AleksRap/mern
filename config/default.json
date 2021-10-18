@@ -1,6 +1,6 @@
 {
   "port": 5000,
   "jwtSecret": "sedov secret key",
-  "mongoUrl": "mongodb+srv://sedov:1234zxc@cluster0.5j2cx.mongodb.net/app?retryWrites=true&w=majority",
+  "mongoUri": "mongodb+srv://sedov:1234zxc@cluster0.5j2cx.mongodb.net/app?retryWrites=true&w=majority",
   "baseUrl": "http://localhost:5000"
 }
