@@ -5,6 +5,7 @@ export type Link = {
   owner: string,
   clicks: number,
   date: Date,
+  _id: string,
 };
 
 export type LinksState = {
@@ -21,9 +22,7 @@ export type LinksGenerateLink = {
 }
 
 export type LinksGenerateLinkRes = {
-  link: {
-    _id: string,
-  } & Link,
+  link: Link,
 }
 
 export type LinksGetLinkInfo = {

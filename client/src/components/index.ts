@@ -1,5 +1,6 @@
 export * from './Button';
 export * from './LinkCard';
+export * from './LinkList';
 export * from './Icon';
 export * from './Input';
 export * from './Navbar';

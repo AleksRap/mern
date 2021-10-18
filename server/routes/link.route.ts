@@ -44,7 +44,7 @@ linkRouter.get('/', authMiddleware, async (req: Request, res: Response) => {
       res.json({ link });
     } else {
       const links = await Link.find({ owner: res.locals.user.userId });
-      res.json(links);
+      res.json({ links });
     }
   } catch (e) {
     res.status(500).json({ message: ERRORS.common });

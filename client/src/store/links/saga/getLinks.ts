@@ -13,7 +13,6 @@ export function* getLinksSaga() {
       method: 'GET',
       url: URL.LINKS.GET,
     });
-
     const { links } = response.data;
 
     yield put(linksSetState({
