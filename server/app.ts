@@ -1,4 +1,5 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
+import path from 'path';
 import config from 'config';
 import mongoose from 'mongoose';
 import { authRouter, linkRouter, redirectRouter } from '@routes';
@@ -10,6 +11,14 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 app.use('/api/links', linkRouter);
 app.use('/t', redirectRouter);
+
+if (process.env.Node_ENV === 'production') {
+  app.use('/', express.static(path.join(__dirname, 'client', 'build')));
+
+  app.get('*', (req: Request, res: Response) => {
+    res.sendFile(path.resolve('client', 'build', 'index.html'));
+  });
+}
 
 const PORT = config.get('port') || 5000;
 
