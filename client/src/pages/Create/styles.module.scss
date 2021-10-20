@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 15px;
 
-  @include forTablet {
+  @include forDesktopSm {
     width: 60%;
 
     flex-direction: row;
@@ -26,7 +26,7 @@
   width: 100%;
   flex: 0 0 auto;
 
-  @include forTablet {
+  @include forDesktopSm {
     width: initial;
   }
 }

@@ -27,7 +27,7 @@
   }
 }
 
-.btnLogout {
+:root .btnLogout {
   display: none;
 
   @include forTablet {

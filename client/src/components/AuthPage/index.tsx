@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cx from 'classnames';
 import { H3 } from '@components';
-import { AuthForm } from '@containers';
+import { AuthForm } from '@components/AuthPage/components';
 import { AuthFormType } from '@types';
 import styles from './styles.module.scss';
 
