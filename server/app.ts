@@ -12,7 +12,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/links', linkRouter);
 app.use('/t', redirectRouter);
 
-if (process.env.Node_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   app.use('/', express.static(path.join(__dirname, 'client', 'build')));
 
   app.get('*', (req: Request, res: Response) => {

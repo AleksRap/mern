@@ -1,10 +1,10 @@
 {
   "name": "mern",
   "version": "1.0.0",
-  "main": "server/app.js",
+  "main": "server/app.ts",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node server/app.ts",
-    "server": "cross-env NODE_ENV=production nodemon",
+    "start": "cross-env NODE_ENV=production npm run server",
+    "server": "nodemon",
     "server:build": "tsc",
     "client": "cd client && npm run start",
     "client:install": "cd client && npm i",
