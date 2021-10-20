@@ -14,5 +14,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "allowJs": false,
+    "outDir": "server/build/"
   },
 }

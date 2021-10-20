@@ -4,7 +4,8 @@
   "main": "server/app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node server/app.ts",
-    "server": "nodemon",
+    "server": "cross-env NODE_ENV=production nodemon",
+    "server:build": "tsc",
     "client": "cd client && npm run start",
     "client:install": "cd client && npm i",
     "client:build": "cd client && npm run build",
@@ -35,6 +36,7 @@
     "@types/config": "^0.0.39",
     "@types/express": "^4.17.13",
     "@types/jsonwebtoken": "^8.5.5",
+    "@types/node": "^16.11.1",
     "@types/shortid": "^0.0.29",
     "concurrently": "^6.3.0",
     "cross-env": "^7.0.3",
