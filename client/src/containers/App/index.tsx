@@ -19,7 +19,7 @@ export const App: FC = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.container}>
+    <>
       <header className={styles.header}>
         <NavLink
           to={routes.create.root}
@@ -49,10 +49,12 @@ export const App: FC = () => {
         )}
       </header>
 
-      <main className={styles.main}>
-        <Routes />
-      </main>
-      <ToastContainer hideProgressBar position="top-center" />
-    </div>
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <Routes />
+        </main>
+        <ToastContainer hideProgressBar position="top-center" />
+      </div>
+    </>
   );
 }
