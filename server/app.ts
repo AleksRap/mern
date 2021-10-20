@@ -1,6 +1,7 @@
-import express, { Request, Response } from 'express';
 import path from 'path';
+process.env.NODE_CONFIG_DIR = path.join(__dirname, 'config');
 import config from 'config';
+import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { authRouter, linkRouter, redirectRouter } from '@routes';
 
