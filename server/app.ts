@@ -13,7 +13,7 @@ app.use('/api/links', linkRouter);
 app.use('/t', redirectRouter);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use('/', express.static(path.join(__dirname, 'client', 'build')));
+  app.use('/', express.static(path.join('client', 'build')));
 
   app.get('*', (req: Request, res: Response) => {
     res.sendFile(path.resolve('client', 'build', 'index.html'));
