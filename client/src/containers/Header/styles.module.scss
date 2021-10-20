@@ -1,0 +1,43 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.header {
+  position: relative;
+  width: 100%;
+  height: $header-height;
+
+  @include flexbox();
+  gap: 25px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  background-color: lightcoral;
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.navbar {
+  display: none;
+
+  @include forTablet {
+    display: initial;
+  }
+}
+
+.btnLogout {
+  display: none;
+
+  @include forTablet {
+    display: initial;
+  }
+}
+
+.btnMenu {
+
+  @include forTablet {
+    display: none;
+  }
+}

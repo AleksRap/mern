@@ -1,6 +1,7 @@
 @import '../../assets/styles/mixins';
 
 .form {
+  width: 100%;
   max-width: 500px;
 
   margin-left: auto;
@@ -13,5 +14,13 @@
 
 .btns {
   width: 100%;
+
   @include flexbox(start, center);
+  flex-direction: column;
+  gap: 10px;
+
+  @include forTablet {
+    flex-direction: row;
+    gap: initial;
+  }
 }

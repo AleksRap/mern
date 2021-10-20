@@ -6,6 +6,7 @@ import { Button, Input } from '@components';
 import { routes, ERRORS, Validations } from '@constants';
 import { history } from '@utils';
 import { authSignIn, authSignUp } from '@store/auth/actionCreators';
+import { AuthFormType } from '@types';
 import styles from './styles.module.scss';
 
 type InitialValues = {
@@ -55,7 +56,7 @@ const validationSchemaRegister = object().shape({
 });
 
 type Props = {
-  type: 'register' | 'login'
+  type: AuthFormType,
 }
 
 export const AuthForm: FC<Props> = ({

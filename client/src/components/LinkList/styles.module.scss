@@ -1,20 +1,35 @@
 @import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
 
-table {
+.table {
   width: 100%;
   border-collapse: collapse;
 }
 
-tr {
+.table,
+.text {
+  font-size: 12px;
+
+  @include forTablet {
+    font-size: 16px;
+  }
+}
+
+.tr {
   border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
-th {
+.th {
   text-align: left;
 }
 
-td,
-th {
+.td,
+.th {
+  max-width: 100px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
   padding-top: 10px;
   padding-bottom: 10px;
 

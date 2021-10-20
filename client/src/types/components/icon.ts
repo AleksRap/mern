@@ -1,7 +1,8 @@
 enum Values {
   checkmark,
   cross,
-  warning
+  warning,
+  menu
 }
 
 export type IconName = keyof typeof Values;

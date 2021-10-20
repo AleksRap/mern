@@ -1,13 +1,4 @@
 import React, { FC } from 'react';
-import { H3 } from '@components';
-import { AuthForm } from '@containers';
+import { AuthPage } from '@components';
 
-export const Auth: FC = () => (
-  <div>
-    <H3 align="center">
-      Авторизация
-    </H3>
-
-    <AuthForm type="login" />
-  </div>
-);
+export const Auth: FC = () => <AuthPage type="login" />;

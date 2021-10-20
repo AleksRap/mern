@@ -37,13 +37,14 @@ export const Create: FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className={styles.container}
+      className={styles.form}
     >
       <Input
         name="link"
         placeholder="Вставьте ссылку"
         value={values.link}
         onChange={handleChange}
+        className={styles.input}
       />
       <Button
         type="submit"

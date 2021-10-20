@@ -1,4 +1,5 @@
 export * from './App';
-export * from './AuthForm';
+export * from '../components/AuthForm';
+export * from './Header';
 export * from './Routes';
 export * from './PrivateRoute';

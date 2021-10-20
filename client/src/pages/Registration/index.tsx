@@ -1,15 +1,4 @@
 import React, { FC } from 'react';
-import { H3 } from '@components';
-import { AuthForm } from '@containers';
+import { AuthPage } from '@components';
 
-export const Registration: FC = () => {
-  return (
-    <div>
-      <H3 align="center">
-        Регистрация
-      </H3>
-
-      <AuthForm type="register" />
-    </div>
-  );
-};
+export const Registration: FC = () => <AuthPage type="register" />;

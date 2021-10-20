@@ -1,51 +1,20 @@
 @import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
 
-$header-height: 70px;
+.wrap {
+  overflow-x: hidden;
+}
 
 .container {
   width: 100%;
   max-width: 1200px;
-  height: 100vh;
+  min-height: calc(100vh - #{$header-height});
 
   margin-left: auto;
   margin-right: auto;
 
+  padding: 20px;
+
   @include flexbox(flex-start, center);
   flex-direction: column;
-}
-
-.header {
-  width: 100%;
-  height: $header-height;
-
-  @include flexbox();
-  gap: 25px;
-
-  padding-left: 20px;
-  padding-right: 20px;
-
-  background-color: lightcoral;
-}
-
-.logo {
-  text-decoration: none;
-  color: white;
-}
-
-.logoText {
-  display: inline-block;
-
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.navbar {
-  margin-left: auto;
-}
-
-.main {
-  width: 100%;
-  min-height: calc(100vh - #{$header-height});
-
-  padding: 20px;
 }

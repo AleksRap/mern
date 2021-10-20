@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import { Link as LinkType } from '@types';
 import { Text } from '@components/Typography';
@@ -15,20 +16,20 @@ export const LinkList: FC<Props> = ({
   className,
 }) => links.length
   ? (
-    <table className={className}>
+    <table className={cx(styles.table, className)}>
       <thead>
-      <tr>
-        <th>№</th>
-        <th>Оригинальная</th>
-        <th>Сокращенная</th>
-        <th>Инфо</th>
+      <tr className={styles.tr}>
+        <th className={styles.th}>№</th>
+        <th className={styles.th}>Оригинальная</th>
+        <th className={styles.th}>Сокращенная</th>
+        <th className={styles.th}>Инфо</th>
       </tr>
       </thead>
       <tbody>
         {links.map(({ from, to, _id }, index) => (
-          <tr key={_id}>
-            <td>{index + 1}</td>
-            <td>
+          <tr key={_id} className={styles.tr}>
+            <td className={styles.td}>{index + 1}</td>
+            <td className={styles.td}>
               <a
                 href={to}
                 target="_blank"
@@ -38,7 +39,7 @@ export const LinkList: FC<Props> = ({
                 {to}
               </a>
             </td>
-            <td>
+            <td className={styles.td}>
               <a
                 href={from}
                 target="_blank"
@@ -48,12 +49,12 @@ export const LinkList: FC<Props> = ({
                 {from}
               </a>
             </td>
-            <td>
+            <td className={styles.td}>
               <Link
                 to={`${routes.details.link}/${_id}`}
                 className={styles.link}
               >
-                <Text tag="span">Подробнее</Text>
+                <Text tag="span" className={styles.text}>Подробнее</Text>
               </Link>
             </td>
           </tr>
