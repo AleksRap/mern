@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server/app.ts",
   "scripts": {
-    "start": "pm2 start npm -- start",
+    "start": "pm2 start npm -- start:project",
     "start:project": "cross-env NODE_ENV=production npm run server",
     "server": "nodemon",
     "server:build": "tsc",
