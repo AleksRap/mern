@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "server/app.ts",
   "scripts": {
-    "start": "cross-env NODE_ENV=production npm run server",
+    "start": "pm2 start npm -- start",
+    "start:project": "cross-env NODE_ENV=production npm run server",
     "server": "nodemon",
     "server:build": "tsc",
     "client": "cd client && npm run start",
@@ -47,6 +48,7 @@
     "husky": "^7.0.2",
     "nodemon": "^2.0.13",
     "npm-run-all": "^4.1.5",
+    "pm2": "^5.1.2",
     "ts-node": "^10.3.0",
     "tsconfig-paths": "^3.11.0",
     "typescript": "^4.4.4"
